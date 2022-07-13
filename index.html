@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://github.com/LolzCipher.png" type="image/x-icon">
+    <link rel="stylesheet" href="index.css">
+    <title>LolzCipher</title>
+</head>
+<body>
+    <div class="container">
+        <svg id="locky" state="unlocked" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path id="b" d="M7.17143 6.49624C7.17143 4.04459 9.26929 2.05714 11.8571 2.05714C14.445 2.05714 16.5429 4.04459 16.5429 6.49624V7.4406C16.5429 8.04022 17.0289 8.52631 17.6286 8.52631C18.2282 8.52631 18.7143 8.04022 18.7143 7.4406V6.49624C18.7143 2.90847 15.6442 0 11.8571 0C8.07005 0 5 2.90847 5 6.49624V11.2301C5 11.8297 5.48609 12.3158 6.08571 12.3158C6.68534 12.3158 7.17143 11.8297 7.17143 11.2301V6.49624Z" fill="#4F545C"/>
+            <path id="s" fill-rule="evenodd" clip-rule="evenodd" d="M10.4433 19.5695C10.4173 19.7244 10.2887 19.8525 10.1274 19.8525H9.10787C8.94649 19.8525 8.81432 19.7249 8.82874 19.5685C8.9845 17.8797 10.5124 16.469 12.3682 16.469C14.2241 16.469 15.7521 17.8797 15.9078 19.5685C15.9222 19.7249 15.7901 19.8525 15.6287 19.8525H14.6092C14.4478 19.8525 14.3192 19.7244 14.2933 19.5695C14.1472 18.6979 13.3434 17.9523 12.3682 17.9523C11.3931 17.9523 10.5894 18.6979 10.4433 19.5695ZM5.42857 11L19.1429 11C21.0364 11 22.5714 12.4542 22.5714 14.2481V20.7444C22.5714 22.5382 21.0364 23.9925 19.1429 23.9925H5.42857C3.53502 23.9925 2 22.5382 2 20.7444V14.2481C2 12.4542 3.53502 11 5.42857 11ZM17.9845 18.6886C17.9845 18.0429 18.5519 17.5247 19.245 17.5247C19.938 17.5247 20.5054 18.0429 20.5054 18.6886C20.5054 19.3342 19.938 19.8525 19.245 19.8525C18.5519 19.8525 17.9845 19.3342 17.9845 18.6886ZM4.23118 18.6886C4.23118 18.0429 4.79845 17.5247 5.49156 17.5247C6.18457 17.5247 6.75194 18.0429 6.75194 18.6886C6.75194 19.3342 6.18456 19.8525 5.49156 19.8525C4.79845 19.8525 4.23118 19.3342 4.23118 18.6886Z" fill="#A3A6AA"/>
+            <path id="h" fill-rule="evenodd" clip-rule="evenodd" d="M13.9804 17.4615C14.0342 17.4615 14.0781 17.5039 14.0756 17.5562C14.0235 18.6543 13.0723 19.6271 11.9064 19.6271C10.7406 19.6271 9.78933 18.6543 9.73721 17.5562C9.73473 17.5039 9.77857 17.4615 9.83237 17.4615H13.9804ZM3.68703 16.9553C3.59942 16.9074 3.56367 16.8026 3.6045 16.7132L4.08757 15.6564C4.13421 15.5543 4.26099 15.5135 4.36106 15.5682L7.46344 17.265C7.71109 17.4004 7.7111 17.7391 7.46345 17.8745L4.36106 19.5713C4.26099 19.626 4.13421 19.5851 4.08757 19.4831L3.6045 18.4263C3.56367 18.3369 3.59942 18.232 3.68703 18.1841L4.50845 17.7349C4.64088 17.6625 4.64088 17.477 4.50845 17.4046L3.68703 16.9553ZM19.1429 11C21.0364 11 22.5714 12.4542 22.5714 14.2481V20.7444C22.5714 22.5382 21.0364 23.9925 19.1429 23.9925H5.42857C3.53502 23.9925 2 22.5382 2 20.7444V14.2481C2 12.4542 3.53502 11 5.42857 11H19.1429ZM20.0195 17.8923C20.0195 18.5501 19.4568 19.0833 18.7626 19.0833C18.0684 19.0833 17.5056 18.5501 17.5056 17.8923C17.5056 17.2346 18.0684 16.7014 18.7626 16.7014C19.4568 16.7014 20.0195 17.2347 20.0195 17.8923Z" fill="#A3A6AA"/>
+        </svg>
+        <p id="t" onload="this.innerText=_._"></p>
+    </div>
+    <script>
+        // Imagine being bad in Javascript and dont understand this Overcomplicated Junk of Code
+
+        var queries = (...args) => args.map(e => document.querySelector(e)), sleep = (timeout=100,d) => {
+            var wait = false; while(wait){ setTimeout(() => (wait=true),timeout); }
+            if(wait) return d;
+        };
+
+        const [locky,text] = queries("#locky","#t"),_ = {
+            $ : ["locked","unlocked"],
+            _ : ["E2E for Discord","LolzCipher"],
+            ".": new Audio("lock.wav"),
+            ",": new Audio("unlock.wav")
+        }, $ = $ => _._[Math.floor(Math.random() * _._.length)];
+        locky.addEventListener("click", () => (_[locky.getAttribute("state")==_.$[0]&&"."||","].play(),locky.setAttribute("state",_.$[locky.getAttribute("state")==_.$[0]&&1||0]),text.innerText = locky.getAttribute("state")==_.$[0]?(() => $().split("").reverse().map(e => String.fromCharCode(e.toString().charCodeAt() + Math.floor(Math.random() * (256-32)+32))).join(""))() : $()));
+        document.addEventListener("keypress", e => (e.keyCode === 13) && (sleep(500,document.querySelector("#locky").dispatchEvent(new Event("click")))));
+        window.onload = function() {
+            text.innerText = "LolzCipher";
+        }
+    </script>
+</body>
+</html>

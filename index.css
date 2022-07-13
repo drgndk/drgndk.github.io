@@ -1,0 +1,69 @@
+:root {
+    --primary: #36393F;
+    --brand: #5865F2;
+    margin: 0;
+    text-transform: uppercase;
+    color: #3BA55D;
+    font-size: calc(2.5vh + 2.5vw);
+    font-weight: 800;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    user-select: none !important;
+}
+
+.container {
+    background-color: var(--primary);
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top:0; left: 0;
+    width: 100%; height: 100%;
+}
+
+.container #locky {
+    width: 25%;
+    height: 25%;
+}
+
+.container #locky,
+.container #locky #b {
+    transition: .175s cubic-bezier(0.175, 0.885, 0.32, 1.075);
+    position: relative;
+}
+
+.container #locky {
+    pointer-events: none !important;
+}
+
+.container #locky #s,
+.container #locky #h {
+    pointer-events: all !important;
+}
+
+.container #locky[state="locked"] #s,
+.container #locky[state="unlocked"] #h {
+    opacity: 0;
+}
+
+.container #locky[state="locked"] #b {
+    transform: translateY(4px);
+}
+
+.container #locky[state="unlocked"] #b {
+    transition: .175s cubic-bezier(0.175, 0.885, 0.32, 1.175);
+    transform: translateY(1px);
+}
+
+.container #locky:hover {
+    transform: scale(1.025);
+}
+
+.container #t {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) translateY(100%);
+}
