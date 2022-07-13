@@ -1,0 +1,18 @@
+{
+    "releases":{
+        "@latest": {
+            "ver": "1.132631",
+            "files": {
+                "css": "/latest.css",
+                "js": "/latest.js"
+            }
+        },
+        "@alpha": {
+            "ver": "0.742",
+            "files": {
+                "css": "/alpha.css",
+                "js": "/alpha.js"
+            }
+        }
+    }
+}
