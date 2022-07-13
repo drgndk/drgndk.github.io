@@ -4,8 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LolzCipher is a E2E Calculator for your Friends Android and iOS PC.">
+    <meta name="keywords" content="LolzCipher, e2e, Encryption, Ent-to-End, Lolz">
+    <meta name="author" content="LolzCipher">
     <link rel="icon" href="https://github.com/LolzCipher.png" type="image/x-icon">
-    <link rel="stylesheet" href="index.css">
+    <style>
+        :root {margin: 0; text-transform: uppercase;color: #3BA55D; font-size: calc(2.5vh + 2.5vw);font-weight: 800;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;text-align: center; user-select: none !important;}
+        .container {background-color: #36393F;display: inline-flex; flex-direction: column;justify-content: center; align-items: center;position: fixed; top:0; left: 0;width: 100%; height: 100%;}
+        .container #locky {width: 25%;height: 25%;pointer-events: none !important;}
+        .container #locky,.container #locky #b {transition: .175s cubic-bezier(0.175, 0.885, 0.32, 1.075);position: relative;}
+        .container #locky * {transition: .25s cubic-bezier(0.175, 0.885, 0.32, 1.175), opacity .0s;}
+        .container #locky #s,.container #locky #h {pointer-events: all !important;}
+        .container #locky[state="locked"] #s,.container #locky[state="unlocked"] #h {opacity: 0;}
+        .container #locky[state="locked"] #b {transform: translateY(2.15px);}
+        .container #locky[state="locked"] #h,.container #locky[state="locked"] #s {transform: translateY(-2px);}
+        .container #locky[state="unlocked"] #b {transform: translateY(1px);}
+        .container #locky:hover {transform: scale(1.025);}
+        .container #t {display: block;position: fixed;top: 50%;left: 50%;transform: translate(-50%,-50%) translateY(100%);}
+    </style>
     <title>LolzCipher</title>
 </head>
 <body>
