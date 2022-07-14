@@ -11,7 +11,7 @@
     <style>
         :root {margin: 0;color: #3BA55D; font-size: calc(2.5vh + 2.5vw);font-weight: 800;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;text-align: center; user-select: none !important;}
         .container {background-color: #36393F;display: inline-flex; flex-direction: column;justify-content: center; align-items: center;position: fixed; top:0; left: 0;width: 100%; height: 100%;}
-        .container #locky {width: 25%;height: 25%;pointer-events: none !important;}
+        .container #locky {opacity: .5;width: 25%;height: 25%;pointer-events: none !important;}
         .container #locky,.container #locky #b {transition: .175s cubic-bezier(0.175, 0.885, 0.32, 1.075);position: relative;}
         .container #locky * {transition: .45s cubic-bezier(0.175, 0.885, 0.32, 1.175), opacity .0s;}
         .container #locky #s,.container #locky #h {pointer-events: all !important;}
@@ -19,10 +19,9 @@
         .container #locky[state="locked"] #b {transform: translateY(2.15px);}
         .container #locky[state="locked"] #h,.container #locky[state="locked"] #s {transform: translateY(-2px);}
         .container #locky[state="unlocked"] #b {transform: translateY(1px);}
-        .container #locky:hover {transform: scale(1.025);}
-        .container #t {display: block;position: fixed;top: 50%;left: 50%;transform: translate(-50%,-50%) translateY(100%);}
-        #latest,#alpha{transition: .5s cubic-bezier(0.165, 0.84, 0.44, 1);opacity: 1;margin: 12px 0;height: calc(2.5vh + 2.5vw);}
-        #latest:empty,#alpha:empty{transform: translateY(-50px);opacity: 0;pointer-events: none !important;height: calc((2.5vh + 2.5vw) / 2);}
+        .container #locky:hover {transform: scale(1.025);opacity: 1;}
+        #release{transition: .5s cubic-bezier(0.165, 0.84, 0.44, 1);opacity: 1;margin: 12px 0;height: calc(2.5vh + 2.5vw);}
+        #release:empty{transform: translateY(-50px);opacity: 0;pointer-events: none !important;height: calc((2.5vh + 2.5vw) / 2);}
     </style>
     <title>LolzCipher</title>
 </head>
@@ -33,20 +32,21 @@
             <path id="s" fill-rule="evenodd" clip-rule="evenodd" d="M10.4433 19.5695C10.4173 19.7244 10.2887 19.8525 10.1274 19.8525H9.10787C8.94649 19.8525 8.81432 19.7249 8.82874 19.5685C8.9845 17.8797 10.5124 16.469 12.3682 16.469C14.2241 16.469 15.7521 17.8797 15.9078 19.5685C15.9222 19.7249 15.7901 19.8525 15.6287 19.8525H14.6092C14.4478 19.8525 14.3192 19.7244 14.2933 19.5695C14.1472 18.6979 13.3434 17.9523 12.3682 17.9523C11.3931 17.9523 10.5894 18.6979 10.4433 19.5695ZM5.42857 11L19.1429 11C21.0364 11 22.5714 12.4542 22.5714 14.2481V20.7444C22.5714 22.5382 21.0364 23.9925 19.1429 23.9925H5.42857C3.53502 23.9925 2 22.5382 2 20.7444V14.2481C2 12.4542 3.53502 11 5.42857 11ZM17.9845 18.6886C17.9845 18.0429 18.5519 17.5247 19.245 17.5247C19.938 17.5247 20.5054 18.0429 20.5054 18.6886C20.5054 19.3342 19.938 19.8525 19.245 19.8525C18.5519 19.8525 17.9845 19.3342 17.9845 18.6886ZM4.23118 18.6886C4.23118 18.0429 4.79845 17.5247 5.49156 17.5247C6.18457 17.5247 6.75194 18.0429 6.75194 18.6886C6.75194 19.3342 6.18456 19.8525 5.49156 19.8525C4.79845 19.8525 4.23118 19.3342 4.23118 18.6886Z" fill="#A3A6AA"/>
             <path id="h" fill-rule="evenodd" clip-rule="evenodd" d="M13.9804 17.4615C14.0342 17.4615 14.0781 17.5039 14.0756 17.5562C14.0235 18.6543 13.0723 19.6271 11.9064 19.6271C10.7406 19.6271 9.78933 18.6543 9.73721 17.5562C9.73473 17.5039 9.77857 17.4615 9.83237 17.4615H13.9804ZM3.68703 16.9553C3.59942 16.9074 3.56367 16.8026 3.6045 16.7132L4.08757 15.6564C4.13421 15.5543 4.26099 15.5135 4.36106 15.5682L7.46344 17.265C7.71109 17.4004 7.7111 17.7391 7.46345 17.8745L4.36106 19.5713C4.26099 19.626 4.13421 19.5851 4.08757 19.4831L3.6045 18.4263C3.56367 18.3369 3.59942 18.232 3.68703 18.1841L4.50845 17.7349C4.64088 17.6625 4.64088 17.477 4.50845 17.4046L3.68703 16.9553ZM19.1429 11C21.0364 11 22.5714 12.4542 22.5714 14.2481V20.7444C22.5714 22.5382 21.0364 23.9925 19.1429 23.9925H5.42857C3.53502 23.9925 2 22.5382 2 20.7444V14.2481C2 12.4542 3.53502 11 5.42857 11H19.1429ZM20.0195 17.8923C20.0195 18.5501 19.4568 19.0833 18.7626 19.0833C18.0684 19.0833 17.5056 18.5501 17.5056 17.8923C17.5056 17.2346 18.0684 16.7014 18.7626 16.7014C19.4568 16.7014 20.0195 17.2347 20.0195 17.8923Z" fill="#A3A6AA"/>
         </svg>
-        <p id="latest"></p>
-        <p id="alpha"></p>
+        <div id="ver">
+        </div>
     </div>
     <script>
         // Imagine being bad in Javascript and dont understand this Overcomplicated Junk of Code
-        const queries = (...args) => document.querySelector(...args),locky = queries("#locky"),_ = {$ : ["locked","unlocked"]},metadata = fetch(`https://lolzcipher.github.io/metadata.json`).then(response => response.json());
+        function sleep(timeout=100,_do=null) {let t = Date.now();while(Date.now()-timeout<=t) {}return _do;}
+        const queries = (...args) => document.querySelector(...args),locky = queries("#locky"),_ = {$ : ["locked","unlocked"]},
+        metadata = fetch(`https://lolzcipher.github.io/metadata.json`).then(response => response.json()).catch(e => (queries("#latest").innerText="Can't Connect to Server"));
         locky.addEventListener("lock", () => locky.setAttribute("state",_.$[locky.getAttribute("state")==_.$[0]&&1||0]));
-        window.addEventListener("load", () => {
-            setTimeout(() => {
-                metadata.then(data => ((locky.getAttribute("state")==_.$[1]&&locky.dispatchEvent(new Event("lock"))),queries("#latest").innerText=`v${data["releases"]["@latest"]["ver"]}@latest`)),
-                setTimeout(() => (metadata.then(data => ((locky.getAttribute("state")==_.$[1]&&locky.dispatchEvent(new Event("lock"))),queries("#alpha").innerText=`v${data["releases"]["@alpha"]["ver"]}@alpha`))),150);
-            },Math.floor((Math.random() * (1e3-250))+250));
-        });
-        window.addEventListener("beforeunload",() => ((locky.getAttribute("state")==_.$[0]&&locky.dispatchEvent(new Event("lock"))),(!!queries("#latest").innerText&&(queries("#latest").innerText="")),(!!queries("#alpha").innerText&&(queries("#alpha").innerText=""))))
+        window.addEventListener("load", () => {setTimeout(() => (metadata.then(data => {
+        let rel = Object.entries(data["releases"]);rel.map(([key,val]) => {let p = document.createElement("p");
+        p.id = "release";p.setAttribute("ver",val["ver"]);p.setAttribute("release",key);queries("#ver").appendChild(p);
+        setTimeout(() => {let get = e => p.getAttribute(e);p.innerText=`v${get("ver")}${get("release")}`;},75);});
+        }),(locky.getAttribute("state")==_.$[1]&&locky.dispatchEvent(new Event("lock")))),Math.floor((Math.random() * (1e3-250))+250));});
+        window.addEventListener("beforeunload",() => ((locky.getAttribute("state")==_.$[0]&&locky.dispatchEvent(new Event("lock")))));
     </script>
 </body>
 </html>
