@@ -37,10 +37,7 @@
         // Imagine being bad in Javascript and dont understand this Overcomplicated Junk of Code
         const queries = (...args) => document.querySelector(...args),locky = queries("#locky"),_ = {$ : ["locked","unlocked"]};
         locky.addEventListener("lock", () => locky.setAttribute("state",_.$[locky.getAttribute("state")==_.$[0]&&1||0]));
-        document.addEventListener("keypress", e => (e.keyCode === 13) && locky.dispatchEvent(new Event("lock")));
-
-        fetch(`https://lolzcipher.github.io/metadata.json`)
-        .then(response => response.json())
+        fetch(`https://lolzcipher.github.io/metadata.json`).then(response => response.json())
         .then(data => ((locky.getAttribute("state")==_.$[1]&&locky.dispatchEvent(new Event("lock"))),document.querySelector("#ver").innerText=`v${data["releases"]["@latest"]["ver"]}@latest`));
     </script>
 </body>
