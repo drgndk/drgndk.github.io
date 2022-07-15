@@ -1,7 +1,7 @@
 {
     "releases":{
         "@latest": {
-            "ver": "1.132634",
+            "ver": "1.132635",
             "files": {
                 "css": "/latest.css",
                 "js": "/latest.js"
