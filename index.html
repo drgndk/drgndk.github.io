@@ -37,22 +37,18 @@
     </div>
     <script>
         /*
-           ooooo                  oooo               .oooooo.    o8o             oooo                           
-           `888'                  `888              d8P'  `Y8b   `"'             `888                           
-            888          .ooooo.   888    oooooooo 888          oooo  oo.ooooo.   888 .oo.    .ooooo.  oooo d8b 
-            888         d88' `88b  888   d'""7d8P  888          `888   888' `88b  888P"Y88b  d88' `88b `888""8P 
-            888         888   888  888     .d8P'   888           888   888   888  888   888  888ooo888  888     
-            888       o 888   888  888   .d8P'  .P `88b    ooo   888   888   888  888   888  888    .o  888     
-           o888ooooood8 `Y8bod8P' o888o d8888888P   `Y8bood8P'  o888o  888bod8P' o888o o888o `Y8bod8P' d888b    
-                                                                       888                                      
-                                                                      o888o                                              
+        _   ooooo                  oooo               .oooooo.    o8o             oooo                           
+        _   `888'                  `888              d8P'  `Y8b   `"'             `888                           
+        _     888          .ooooo.   888    oooooooo 888          oooo  oo.ooooo.   888 .oo.    .ooooo.  oooo d8b 
+        _    888         d88' `88b  888   d'""7d8P  888          `888   888' `88b  888P"Y88b  d88' `88b `888""8P 
+        _    888         888   888  888     .d8P'   888           888   888   888  888   888  888ooo888  888     
+        _    888       o 888   888  888   .d8P'  .P `88b    ooo   888   888   888  888   888  888    .o  888     
+        _   o888ooooood8 `Y8bod8P' o888o d8888888P   `Y8bood8P'  o888o  888bod8P' o888o o888o `Y8bod8P' d888b    
+        _                                                               888                                      
+        _                                                              o888o          
+        _   v1.132^
         */
-        const queries=(...args)=>document.querySelector(...args),locky=queries("#locky"),_={$:["locked","unlocked"]},metadata=fetch(`https://lolzcipher.github.io/metadata.json?t=${
-        Date.now()}`).then(response=>response.json()).catch(e=>(queries("#ver").innerText="Can't Connect to Server"));locky.addEventListener("lock",()=>locky.setAttribute("state",_
-        .$[locky.getAttribute("state")==_.$[0]&&1||0]));window.addEventListener("load",()=>{setTimeout(()=>(metadata.then(data=>{let rel=Object.entries(data["releases"]);rel.map(([
-        key,val])=>{let p = document.createElement("p");p.id="release";p.setAttribute("ver",val["ver"]);p.setAttribute("release",key);queries("#ver").appendChild(p);setTimeout(()=>
-        {let get=e=>p.getAttribute(e);p.innerText=`v${get("ver")}${get("release")}`;},75);});}),(locky.getAttribute("state")==_.$[1]&&locky.dispatchEvent(new Event("lock")))),Math.
-        floor((Math.random()*(1e3-250))+250));});window.addEventListener("beforeunload",()=>((locky.getAttribute("state")==_.$[0]&&locky.dispatchEvent(new Event("lock")))));
+        let $={e:new Event("lock"),d:document,w:window,u:`https://lolzcipher.github.io/metadata.json?t=${Date.now()}`,c:"Can't Connect to Server",l:"#locky",v:"#ver",s:"state",r:"releases",$:["locked","unlocked"]},q=(...a)=>$.d.querySelector(...a),l=q($.l),m=fetch($.u).then(r=>r.json()).catch(e=>(q($.v).innerText=$.c));l.addEventListener("lock",_=>l.setAttribute($.s,$.$[+!(l.getAttribute($.s)==$.$[1])]));$.w.addEventListener("load",_=>setTimeout(_=>m.then(d=>{Object.entries(d[$.r]).map(([k,v])=>{let p=Object.assign(document.createElement("p"),{id:"release"}),get=_=>p.getAttribute(_),set=(_,$)=>p.setAttribute(_,$);set("v",v["ver"]),set("r",k);q($.v).appendChild(p),setTimeout(_=>(p.innerText=`v${get("v")}${get("r")}`,(l.getAttribute($.s)==$.$[1])&&locky.dispatchEvent($.e)),75);});}),Math.floor(Math.random()*(750)+250)));$.w.addEventListener("beforeunload",_=>(l.getAttribute($.s)==$.$[0]&&l.dispatchEvent($.e)));
     </script>
 </body>
 </html>
