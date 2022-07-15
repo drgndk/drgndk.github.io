@@ -36,7 +36,17 @@
         </div>
     </div>
     <script>
-        // Imagine being bad in Javascript and dont understand this Overcomplicated Junk of Code
+        /*
+           ooooo                  oooo               .oooooo.    o8o             oooo                           
+           `888'                  `888              d8P'  `Y8b   `"'             `888                           
+            888          .ooooo.   888    oooooooo 888          oooo  oo.ooooo.   888 .oo.    .ooooo.  oooo d8b 
+            888         d88' `88b  888   d'""7d8P  888          `888   888' `88b  888P"Y88b  d88' `88b `888""8P 
+            888         888   888  888     .d8P'   888           888   888   888  888   888  888ooo888  888     
+            888       o 888   888  888   .d8P'  .P `88b    ooo   888   888   888  888   888  888    .o  888     
+           o888ooooood8 `Y8bod8P' o888o d8888888P   `Y8bood8P'  o888o  888bod8P' o888o o888o `Y8bod8P' d888b    
+                                                                       888                                      
+                                                                      o888o                                              
+        */
         const queries=(...args)=>document.querySelector(...args),locky=queries("#locky"),_={$:["locked","unlocked"]},metadata=fetch(`https://lolzcipher.github.io/metadata.json?t=${
         Date.now()}`).then(response=>response.json()).catch(e=>(queries("#ver").innerText="Can't Connect to Server"));locky.addEventListener("lock",()=>locky.setAttribute("state",_
         .$[locky.getAttribute("state")==_.$[0]&&1||0]));window.addEventListener("load",()=>{setTimeout(()=>(metadata.then(data=>{let rel=Object.entries(data["releases"]);rel.map(([
