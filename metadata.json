@@ -1,18 +1,8 @@
 {
     "releases":{
-        "@latest": {
-            "ver": "1.132638",
-            "files": {
-                "css": "/latest.css",
-                "js": "/latest.js"
-            }
-        },
-        "@alpha": {
-            "ver": "0.742",
-            "files": {
-                "css": "/alpha.css",
-                "js": "/alpha.js"
-            }
+        "Hydrogen": {
+            "ver": "2023.3.2",
+            "files": false
         }
     }
 }
